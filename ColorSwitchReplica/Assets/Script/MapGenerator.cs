@@ -81,7 +81,7 @@ public class MapGenerator : MonoBehaviour
         _mapContainer[_count].gameObject.SetActive(true);
         _mapContainer[_count].EnablePoint();
         var rand = _mapContainer[_count].Change();
-        _mapContainer[_count].gameObject.transform.position = beforePosition +  Vector3.up * rand *(_isCircle ? 5 : 6);
+        _mapContainer[_count].gameObject.transform.position = beforePosition +  Vector3.up * rand * (_isCircle ? 7 : 10);
         _count++;
     }
 }

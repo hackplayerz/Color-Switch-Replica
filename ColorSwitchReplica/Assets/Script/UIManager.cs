@@ -30,7 +30,6 @@ public class UIManager : MonoBehaviour
     [Header("Value of point per score")]
     [SerializeField] private int _pointPerScore;
     
-    //Set BESTSCORE TEXT
 
     enum AnimationParam
     {

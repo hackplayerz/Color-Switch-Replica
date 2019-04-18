@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         BestScore = DataSaver.LoadBestScore();
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;    
+        Screen.SetResolution(414,732,true);
     }
 
     #endregion
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
         }
         yield return StartCoroutine(UIManager.Instance.GameOverAnimationEnd());
         State = PlayState.Gaming;
+        BestScore = DataSaver.LoadBestScore();
         SceneManager.LoadScene(0); // Now Scene
     }
     
@@ -60,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
 #if UNITY_EDITOR // Editor Play
         EditorApplication.isPlaying = false;
-#elif PLATFORM_STANDALONE // Build Play
+#else
         Application.Quit();
 #endif
     }

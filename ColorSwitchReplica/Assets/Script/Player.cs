@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 
     [Header("Sound FX")]
     [SerializeField] private AudioClip _pointClip;
+    [SerializeField] private AudioClip _jumpClip;
 
 
     private AudioSource _audioSource;
@@ -60,6 +61,7 @@ public class Player : MonoBehaviour
             if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0))
             {
                 _rigidbody2D.velocity = Vector2.up * _jumpForce;
+                _audioSource.PlayOneShot(_jumpClip);
             }
         }
         if (transform.position.y < _lastPosition.y - 10)

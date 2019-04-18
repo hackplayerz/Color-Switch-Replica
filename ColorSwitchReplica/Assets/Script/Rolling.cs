@@ -24,7 +24,7 @@ public class Rolling : MonoBehaviour
     /// <returns>Changed random value</returns>
     public float Change()
     {
-        float random = Random.Range(1.2f, 2f);
+        float random = Random.Range(.7f, 1.6f);
         
         _speed = Random.Range(40f, 150f);
         _sliceTransform.localScale = new Vector3(random,random,1);
